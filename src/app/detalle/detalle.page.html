@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ng-container *ngFor="let producto of productos">
+      <ng-container *ngIf="producto.id===id">
+        <ion-title>{{producto.titulo}}</ion-title>
+      </ng-container>
+    </ng-container>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngFor="let producto of productos">
+    <ng-container *ngIf="producto.id===id">
+      <ion-img [src]="producto.img"></ion-img>
+      <h5>Precio: {{producto.precio | currency}}</h5>
+      <p>{{producto.descripcion}}</p>
+    </ng-container>
+  </ng-container>
+  <ion-text color="primary">
+    <h1>Formulario</h1>
+  </ion-text>
+  <ion-item>
+    <ion-label position="floating">Ingrese su Nombre:</ion-label>
+    <ion-input placeholder="Nombre:" [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Número de telefono:</ion-label>
+    <ion-input placeholder="Nro de Teléfono:" [(ngModel)]="telefono"></ion-input>
+  </ion-item>
+  <ion-button expand="block" shape="round" color="warning" (click)="getLocation()">Dar Ubicación</ion-button>
+  <ion-button expand="block" shape="round" color="success" [disabled]="!(latitud.trim().length!==0 && longitud.trim().length!==0 && nombre.trim().length!==0 && telefono.trim().length!==0)" (click)="enviarMensaje()">Enviar</ion-button>
+</ion-content>

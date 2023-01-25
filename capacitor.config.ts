@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'Desafio3',
+  appId: 'desafio.tres.jgdev',
+  appName: 'Desafio3-JGDEV',
   webDir: 'www',
   bundledWebRuntime: false
 };
